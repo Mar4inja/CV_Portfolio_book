@@ -1,432 +1,497 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    font-family: Poppins, sans-serif;
+    margin: 0; /* Убирает внешние отступы у всех элементов */
+    padding: 0; /* Убирает внутренние отступы у всех элементов */
+    box-sizing: border-box; /* Включает padding и border в размеры элементов */
+    text-decoration: none; /* Убирает подчеркивание текста у всех элементов */
+    border: none; /* Убирает рамки у всех элементов */
+    outline: none; /* Убирает внешние границы у всех элементов */
+    font-family: Poppins, sans-serif; /* Задает шрифт Poppins для всех элементов */
 }
 
 /* Объявление пользовательских свойств CSS (переменных) для повторного использования. */
 :root {
-    --bg-color: #081b29; /* Цвет фона для основного контента. */
-    --main-color: #00abf0; /* Основной акцентный цвет, обычно используется для выделения и важных элементов. */
-    --text-color: #333; /* Основной цвет текста, используется для основного содержимого. */
-    --second-text-color: #555; /* Вторичный цвет текста, используется для менее важного текста. */
-    --white-color: #fff; /* Белый цвет, используется для фонов и текста. */
-    --cover-color: linear-gradient(45deg, #00abf0, #006e9a); /* Градиентный цвет, может использоваться для фонов или наложений. */
-    --page-color: linear-gradient(90deg, #fff, #ddd); /* Градиентный цвет, обычно используется для фонов страницы. */
-    --border: .125rem solid #00abf0; /* Стандартный стиль границы, используется для элементов, требующих границу. */
-    --box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2); /* Тень блока, используется для создания глубины или подсветки элементов. */
+    --bg-color: #081b29; /* Цвет фона для основного контента */
+    --main-color: #112f57; /* Основной акцентный цвет, обычно используется для выделения и важных элементов */
+    --text-color: #333; /* Основной цвет текста, используется для основного содержимого */
+    --second-text-color: #555; /* Вторичный цвет текста, используется для менее важного текста */
+    --white-color: #fff; /* Белый цвет, используется для фонов и текста */
+    --cover-color: url('./images/balckLeather.jpg'); /* Изображение текстуры кожи для фона обложки */
+    --page-color: linear-gradient(90deg, #ece6a8, #e5eeb4); /* Градиентный цвет, обычно используется для фонов страницы */
+    --border: .125rem solid #00abf0; /* Стандартный стиль границы, используется для элементов, требующих границу */
+    --box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2); /* Тень блока, используется для создания глубины или подсветки элементов */
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: var(--bg-color);
-    color: var(--text-color);
+    display: flex; /* Использует flexbox для размещения элементов */
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    align-items: center; /* Центрирует элементы по вертикали */
+    min-height: 100vh; /* Устанавливает минимальную высоту тела на 100% высоты окна */
+    background: var(--bg-color); /* Устанавливает цвет фона */
+    color: var(--text-color); /* Устанавливает цвет текста */
+    overflow: hidden;
 }
 
 .wrapper {
-    position: relative;
-    width: 66rem;
-    height: 45rem;
-    padding: 2rem;
+    position: relative; /* Устанавливает относительное позиционирование */
+    width: 66rem; /* Ширина обертки */
+    height: 45rem; /* Высота обертки */
+    padding: 2rem; /* Внутренний отступ */
+    perspective: 250rem;
+    animation: show-animate 2s forwards;
+}
+
+@keyframes show-animate {
+    0%, 30% {
+        opacity: 0;
+        transform: rotate(-20deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
 }
 
 .cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: var(--cover-color);
-    box-shadow: var(--box-shadow);
-    border-top-left-radius: 0.6rem;
-    border-bottom-left-radius: 0.6rem;
-    transform-origin: right;
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Расположение сверху */
+    left: 0; /* Расположение слева */
+    width: 50%; /* Ширина 50% от родительского элемента */
+    height: 100%; /* Высота 100% от родительского элемента */
+    background: var(--cover-color); /* Устанавливает градиентный цвет фона */
+    box-shadow: var(--box-shadow); /* Добавляет тень */
+    border-top-left-radius: 0.6rem; /* Радиус закругления верхнего левого угла */
+    border-bottom-left-radius: 0.6rem; /* Радиус закругления нижнего левого угла */
+    transform-origin: right; /* Устанавливает точку трансформации справа */
 }
 
 .cover.cover-left {
-    z-index: -1;
+    z-index: -1; /* Отправляет элемент на задний план */
+
+}
+
+.cover.cover-right {
+    z-index: 100;
+    transition: transform 1s cubic-bezier(0.645, 0.45, 0.355, 1);
 }
 
 .cover.cover-right.turn {
-    transform: rotate(180deg);
+    transform: rotateY(180deg); /* Поворачивает элемент на 180 градусов */
 }
 
 .book {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
+    position: relative; /* Относительное позиционирование */
+    width: 100%; /* Ширина 100% от родительского элемента */
+    height: 100%; /* Высота 100% от родительского элемента */
+    display: flex; /* Использует flexbox для размещения элементов */
+    perspective: 250rem;
 }
 
 .book .book-page {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    background: var(--page-color);
-    box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1);
-    display: flex;
-    padding: 2rem;
+    position: absolute; /* Абсолютное позиционирование */
+    width: 50%; /* Ширина 50% от родительского элемента */
+    height: 100%; /* Высота 100% от родительского элемента */
+    background: var(--page-color); /* Устанавливает градиентный цвет фона */
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1); /* Добавляет тень */
+    display: flex; /* Использует flexbox для размещения элементов */
+    padding: 2rem; /* Внутренний отступ */
 }
 
-.profile-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.book-page.page-left {
+    box-shadow: -0.6rem 0.6rem 0.6rem rgba(0, 0, 0, 0.1);
+}
 
+
+.profile-page {
+    display: flex; /* Использует flexbox для размещения элементов */
+    flex-direction: column; /* Размещает элементы по вертикали */
+    justify-content: center; /* Центрирует элементы по вертикали */
+    align-items: center; /* Центрирует элементы по горизонтали */
 }
 
 .profile-page img {
-    width: 180px; /* Noteikts platums */
-    height: 180px; /* Noteikts augstums */
-    border-radius: 50%; /* Uzstādiet border-radius, lai būtu apaļš */
-    border: 0.25rem solid var(--main-color);
-    margin-bottom: 0.8rem;
-    object-fit: cover;
-    object-position: 50% 10%;
-    transform: scaleX(-1);
+    width: 180px; /* Фиксированная ширина изображения */
+    height: 180px; /* Фиксированная высота изображения */
+    border-radius: 50%; /* Закругление границ до формы круга */
+    border: 0.25rem solid var(--main-color); /* Цвет и толщина рамки */
+    margin-bottom: 0.8rem; /* Нижний отступ */
+    object-fit: cover; /* Обрезка изображения, чтобы заполнить контейнер */
+    object-position: center; /* Центрирование изображения */
+    transform: scaleX(1); /* Убираем отражение изображения по горизонтали */
 }
 
-.profile-page h1 {
 
-    font-size: 2.7rem;
-    line-height: 1;
+
+.profile-page h1 {
+    font-size: 2.7rem; /* Размер шрифта */
+    line-height: 1; /* Высота строки */
 }
 
 .profile-page h3 {
-    font-size: 1.5rem;
-    color: var(--main-color);
+    font-size: 1.5rem; /* Размер шрифта */
+    color: var(--main-color); /* Устанавливает цвет текста */
 }
 
 .profile-page .social-media {
-    margin: 0.6rem 0 0.8rem
+    margin: 0.6rem 0 0.8rem; /* Отступы сверху и снизу */
 }
 
 .profile-page .social-media a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    background: transparent;
-    border: var(--border);
-    border-radius: 50%;
-    font-size: 1.3rem;
-    color: var(--main-color);
-    margin: 0 0.2rem;
-    transition: 0.5s;
+    display: inline-flex; /* Использует inline-flex для размещения элементов */
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    align-items: center; /* Центрирует элементы по вертикали */
+    width: 2.5rem; /* Ширина */
+    height: 2.5rem; /* Высота */
+    background: transparent; /* Прозрачный фон */
+    border: var(--border); /* Устанавливает цвет и толщину рамки */
+    border-radius: 50%; /* Устанавливает закругление границ до круглой формы */
+    font-size: 1.3rem; /* Размер шрифта */
+    color: var(--main-color); /* Устанавливает цвет текста */
+    margin: 0 0.2rem; /* Горизонтальные отступы */
+    transition: 0.5s; /* Переходный эффект на 0.5 секунды */
 }
 
 .profile-page .social-media a:hover {
-    background: var(--main-color);
-    color: var(--white-color);
+    background: var(--main-color); /* Изменяет цвет фона при наведении */
+    color: var(--white-color); /* Изменяет цвет текста при наведении */
 }
 
 .profile-page p {
-    text-align: justify;
+    text-align: justify; /* Выравнивает текст по ширине */
 }
 
 .profile-page .btn-box {
-    margin-top: 1.2rem;
+    margin-top: 1.2rem; /* Верхний отступ */
 }
 
 .btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 9.5rem;
-    height: 3rem;
-    background: var(--main-color);
-    border: var(--border);
-    border-radius: 0.3rem;
-    font-size: 1rem;
-    color: var(--white-color);
-    font-weight: 500;
-    margin: 0 1rem;
-    transition: 0.5s;
+    display: inline-flex; /* Использует inline-flex для размещения элементов */
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    align-items: center; /* Центрирует элементы по вертикали */
+    width: 9.5rem; /* Ширина */
+    height: 3rem; /* Высота */
+    background: var(--main-color); /* Устанавливает цвет фона */
+    border: var(--border); /* Устанавливает цвет и толщину рамки */
+    border-radius: 0.3rem; /* Закругление углов */
+    font-size: 1rem; /* Размер шрифта */
+    color: var(--white-color); /* Устанавливает цвет текста */
+    font-weight: 500; /* Жирность шрифта */
+    margin: 0 1rem; /* Горизонтальные отступы */
+    transition: 0.5s; /* Переходный эффект на 0.5 секунды */
 }
 
 .btn:hover {
-    background: transparent;
-    color: var(--main-color);
+    background: transparent; /* Прозрачный фон при наведении */
+    color: var(--main-color); /* Изменяет цвет текста при наведении */
 }
 
 .btn-box .btn:nth-child(2) {
-    background: transparent;
-    color: var(--main-color);
+    background: transparent; /* Прозрачный фон */
+    color: var(--main-color); /* Устанавливает цвет текста */
 }
 
 .btn-box .btn:nth-child(2):hover {
-    background: var(--main-color);
-    color: var(--white-color);
+    background: var(--main-color); /* Изменяет цвет фона при наведении */
+    color: var(--white-color); /* Изменяет цвет текста при наведении */
 }
 
 .book-page.page-right {
-    position: absolute;
-    right: 0;
-    transform-style: preserve-3d;
-    transform-origin: left;
+    position: absolute; /* Абсолютное позиционирование */
+    right: 0; /* Расположение справа */
+    transform-style: preserve-3d; /* Сохраняет трехмерное преобразование */
+    transform-origin: left; /* Устанавливает точку трансформации слева */
+    transition: transform 1s cubic-bezier(0.645, 0.45, 0.355, 1);
 }
 
 .book-page.page-right.turn {
-    transform: rotateY(-180deg);
+    transform: rotateY(-180deg); /* Поворачивает элемент на 180 градусов по оси Y */
 }
 
 .book-page .page-front,
 .book-page .page-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--page-color);
-    padding: 1.5rem 2rem;
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Расположение сверху */
+    left: 0; /* Расположение слева */
+    width: 100%; /* Ширина 100% от родительского элемента */
+    height: 100%; /* Высота 100% от родительского элемента */
+    background: var(--page-color); /* Устанавливает градиентный цвет фона */
+    padding: 1.5rem 2rem; /* Внутренние отступы */
 }
 
 .book-page .page-front {
-    transform: rotateY(0deg) translateZ(1px);
+    transform: rotateY(0deg) translateZ(1px); /* Поворачивает элемент на 0 градусов по оси Y и перемещает по оси Z */
 }
 
 .book-page .page-back {
-    transform: rotateY(180deg) translateZ(1px);
+    transform: rotateY(180deg) translateZ(1px); /* Поворачивает элемент на 180 градусов по оси Y и перемещает по оси Z */
 }
 
 .title {
-    text-align: center;
-    margin-bottom: 1rem;
+    text-align: center; /* Выравнивание текста по центру */
+    margin-bottom: 1rem; /* Нижний отступ */
 }
 
 .workeduc-box {
-    border-left: var(--border);
+    border-left: var(--border); /* Pievieno kreiso maliņu */
 }
 
 .workeduc-box .workeduc-content {
-    position: relative;
-    padding-left: 1.6rem;
-    margin-bottom: 1.2rem;
+    position: relative; /* Pozicionē relatīvi */
+    padding-left: 1.6rem; /* Atstarpe kreisajā pusē */
+    margin-bottom: 1.2rem; /* Atstarpe apakšā */
 }
 
 .workeduc-box .workeduc-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -0.65rem;
-    width: 1.2rem;
-    height: 1.2rem;
-    background: var(--main-color);
-    border-radius: 50%;
+    content: ''; /* Tukšs saturs */
+    position: absolute; /* Absolūta pozicionēšana */
+    top: 0; /* Augšdaļa */
+    left: -0.65rem; /* Kreisa pozīcija */
+    width: 1.2rem; /* Platums */
+    height: 1.2rem; /* Augstums */
+    background: var(--main-color); /* Fona krāsa */
+    border-radius: 50%; /* Apaļi stūri */
 }
 
+
 .workeduc-content .year {
-    color: var(--main-color);
+    color: var(--main-color); /* Krāsa gada tekstam */
 }
 
 .workeduc-content .year i {
-    margin-right: 0.4rem;
+    margin-right: 0.4rem; /* Atstarpe starp ikonu un tekstu */
 }
 
+
 .number-page {
-    position: absolute;
-    bottom: 1.2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 1.2rem; /* Расположение снизу */
+    left: 50%; /* Расположение по центру слева */
+    transform: translateX(-50%); /* Перемещает элемент на 50% влево */
 }
 
 .nextprev-btn {
-    position: absolute;
-    bottom: 0.9rem;
-    right: 1.5rem;
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
-    font-size: 2rem;
-    color: var(--second-text-color);
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 0.9rem; /* Расположение снизу */
+    right: 1.5rem; /* Расположение справа */
+    width: 2rem; /* Ширина */
+    height: 2rem; /* Высота */
+    cursor: pointer; /* Изменяет курсор на указатель */
+    font-size: 2rem; /* Размер шрифта */
+    color: var(--second-text-color); /* Устанавливает цвет текста */
+    display: inline-flex; /* Использует inline-flex для размещения элементов */
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    align-items: center; /* Центрирует элементы по вертикали */
+    transition: 0.5s; /* Переходный эффект на 0.5 секунды */
 }
 
 .nextprev-btn:hover {
-    color: var(--main-color);
-
+    color: var(--main-color); /* Изменяет цвет текста при наведении */
 }
 
 .nextprev-btn.back {
-    left: 1.5rem;
+    left: 1.5rem; /* Расположение слева */
 }
 
 .services-box {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    display: flex; /* Использует flexbox для размещения элементов */
+    flex-wrap: wrap; /* Переносит элементы на новую строку */
+    gap: 1.5rem; /* Промежуток между элементами */
 }
 
 .services-box .services-content {
-    flex: 1 1 10rem;
-    border: var(--border);
-    border-radius: 0.5rem;
-    padding: 0.8rem 0.5rem 1.1rem;
-    text-align: center;
-    transition: 0.3s ease;
+    flex: 1 1 10rem; /* Устанавливает гибкость элемента */
+    border: var(--border); /* Устанавливает цвет и толщину рамки */
+    border-radius: 0.5rem; /* Закругление углов */
+    padding: 0.8rem 0.5rem 1.1rem; /* Внутренние отступы */
+    text-align: center; /* Выравнивание текста по центру */
+    transition: 0.3s ease; /* Переходный эффект на 0.3 секунды */
 }
 
 .services-box .services-content:hover {
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow); /* Добавляет тень при наведении */
 }
 
 .services-content i {
-    font-size: 2.5rem;
-    color: var(--main-color);
+    font-size: 2.5rem; /* Размер шрифта */
+    color: var(--main-color); /* Устанавливает цвет текста */
 }
 
 .services-content h3 {
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Размер шрифта */
 }
 
 .services-content p {
-    margin: 0.2rem 0 0.8rem
+    margin: 0.2rem 0 0.8rem; /* Отступы сверху и снизу */
 }
 
 .services-content .btn {
-    width: 8rem;
-    height: 2.5rem;
+    width: 8rem; /* Ширина */
+    height: 2.5rem; /* Высота */
 }
 
 .skills-box {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    display: flex; /* Использует flexbox для размещения элементов */
+    flex-wrap: wrap; /* Переносит элементы на новую строку */
+    gap: 1.5rem; /* Промежуток между элементами */
 }
 
 .skills-box .skills-content {
-    flex: 1 1 20rem;
+    flex: 1 1 20rem; /* Устанавливает гибкость элемента */
 }
 
 .skills-content h3 {
-    font-size: 1.3rem;
-    line-height: 1;
-    margin-bottom: 0.6rem;
+    font-size: 1.3rem; /* Размер шрифта */
+    line-height: 1; /* Высота строки */
+    margin-bottom: 0.6rem; /* Нижний отступ */
 }
 
 .skills-content .content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
+    display: flex; /* Использует flexbox для размещения элементов */
+    flex-wrap: wrap; /* Переносит элементы на новую строку */
+    gap: 0.8rem; /* Промежуток между элементами */
 }
 
 .skills-content .content span {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 6rem;
-    height: 5rem;
-    border: var(--border);
-    border-radius: 0.3rem;
-    font-weight: 600;
-    transition: 0.3s ease;
+    display: inline-flex; /* Использует inline-flex для размещения элементов */
+    flex-direction: column; /* Размещает элементы по вертикали */
+    justify-content: center; /* Центрирует элементы по вертикали */
+    align-items: center; /* Центрирует элементы по горизонтали */
+    width: 6rem; /* Ширина */
+    height: 5rem; /* Высота */
+    border: var(--border); /* Устанавливает цвет и толщину рамки */
+    border-radius: 0.3rem; /* Закругление углов */
+    font-weight: 600; /* Жирность шрифта */
+    transition: 0.3s ease; /* Переходный эффект на 0.3 секунды */
 }
 
 .skills-content .content span:hover {
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow); /* Добавляет тень при наведении */
 }
 
 .skills-content .content span i {
-    font-size: 3rem;
-    color: var(--main-color);
+    font-size: 3rem; /* Размер шрифта */
+    color: var(--main-color); /* Устанавливает цвет текста */
 }
 
 .portfolio-box .img-box {
-    display: flex;
-    width: 100%;
-    height: 15rem;
-    border: var(--border);
-    border-radius: 0.5rem;
-    overflow: hidden;
+    display: flex; /* Использует flexbox для размещения элементов */
+    width: 100%; /* Ширина 100% от родительского элемента */
+    height: 15rem; /* Высота */
+    border: var(--border); /* Устанавливает цвет и толщину рамки */
+    border-radius: 0.5rem; /* Закругление углов */
+    overflow: hidden; /* Скрывает все, что выходит за рамки */
 }
 
 .portfolio-box .img-box img {
-    width: 100%;
-    object-fit: cover;
-    transition: 0.5s ease;
+    width: 100%; /* Ширина 100% от родительского элемента */
+    object-fit: cover; /* Устанавливает обрезку изображения, чтобы заполнить контейнер */
+    transition: 0.5s ease; /* Переходный эффект на 0.5 секунды */
 }
 
 .portfolio-box .img-box:hover img {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Увеличивает изображение при наведении */
 }
 
 .portfolio-box .info-box {
-
-    margin: 1rem 0 1.5rem;
+    margin: 1rem 0 1.5rem; /* Отступы сверху и снизу */
 }
 
 .portfolio-box .info-box .info-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
+    display: flex; /* Использует flexbox для размещения элементов */
+    justify-content: space-between; /* Распределяет элементы по краям */
+    align-items: center; /* Центрирует элементы по вертикали */
+    margin-bottom: 1rem; /* Нижний отступ */
 }
 
 .portfolio-box .info-box .info-title h3 {
-    font-size: 1.3rem;
+    font-size: 1.3rem; /* Размер шрифта */
 }
 
 .portfolio-box .info-box .info-title a {
-    display: flex;
-    align-items: center;
-    color: var(--main-color);
+    display: flex; /* Использует flexbox для размещения элементов */
+    align-items: center; /* Центрирует элементы по вертикали */
+    color: var(--main-color); /* Устанавливает цвет текста */
 }
 
 .portfolio-box .info-box .info-title a i {
-    margin-left: 0.3rem;
+    margin-left: 0.3rem; /* Левый отступ */
 }
 
 .portfolio-box .info-box p:nth-of-type(1) {
-    font-weight: 600;
+    font-weight: 600; /* Жирность шрифта */
 }
 
 .portfolio-box .btn-box {
-    display: flex;
-    justify-content: center;
+    display: flex; /* Использует flexbox для размещения элементов */
+    justify-content: center; /* Центрирует элементы по горизонтали */
 }
 
 .portfolio-box .btn-box .btn {
-    margin: 0 1.15rem
+    margin: 0 1.15rem; /* Отступы слева и справа */
 }
 
 .contact-box {
-    text-align: center;
+    text-align: center; /* Выравнивание текста по центру */
 }
 
 .contact-box .field {
-    width: 100%;
-    background: transparent;
-    border: var(--border);
-    border-radius: 0.3rem;
-    padding: 0.8rem;
-    font-size: 1rem;
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
+    width: 100%; /* Ширина 100% от родительского элемента */
+    background: transparent; /* Прозрачный фон */
+    border: var(--border); /* Устанавливает цвет и толщину рамки */
+    border-radius: 0.3rem; /* Закругление углов */
+    padding: 0.8rem; /* Внутренние отступы */
+    font-size: 1rem; /* Размер шрифта */
+    color: var(--text-color); /* Устанавливает цвет текста */
+    margin-bottom: 1.5rem; /* Нижний отступ */
 }
 
 .contact-box .field::placeholder {
-    color: var(--text-color);
+    color: var(--text-color); /* Устанавливает цвет текста плейсхолдера */
 }
 
 .contact-box textarea {
-    resize: none;
-    height: 15rem;
+    resize: none; /* Запрещает изменение размеров текстового поля */
+    height: 15rem; /* Высота */
 }
 
 .contact-box .btn {
-    cursor: pointer;
+    cursor: pointer; /* Изменяет курсор на указатель */
 }
-/*TODO 1:06:24*/
+
+.back-profile {
+    position: absolute;
+    bottom: 1.2rem;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: var(--border);
+    border-radius: 0.3rem;
+    font-size: 1.1rem;
+    color: var(--main-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+.back-profile:hover {
+    background: var(--main-color);
+    color: var(--white-color);
+}
+
+.back-profile p {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0.5);
+    font-size: 1rem;
+    color: var(--main-color);
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.back-profile:hover p {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    top: -1.8rem;
+}
