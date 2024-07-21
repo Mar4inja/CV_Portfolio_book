@@ -116,7 +116,7 @@ body {
     margin-bottom: 0.8rem; /* Нижний отступ */
     object-fit: cover; /* Обрезка изображения, чтобы заполнить контейнер */
     object-position: center; /* Центрирование изображения */
-    transform: scaleX(1); /* Убираем отражение изображения по горизонтали */
+    transform: scaleX(-1); /* Убираем отражение изображения по горизонтали */
 }
 
 
@@ -154,6 +154,7 @@ body {
     background: var(--main-color); /* Изменяет цвет фона при наведении */
     color: var(--white-color); /* Изменяет цвет текста при наведении */
 }
+
 
 .profile-page p {
     text-align: justify; /* Выравнивает текст по ширине */
