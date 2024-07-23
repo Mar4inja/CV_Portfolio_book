@@ -496,3 +496,69 @@ body {
     transform: translateX(-50%) scale(1);
     top: -1.8rem;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .cover, .book-page {
+        width: 100%;
+        height: auto;
+    }
+
+    .book {
+        flex-direction: column;
+    }
+
+    .profile-page img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-page h1 {
+        font-size: 2rem;
+    }
+
+    .profile-page h3 {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .workeduc-content {
+        margin-bottom: 0.8rem;
+    }
+
+    .services-box, .skills-box {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-page h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-page h3 {
+        font-size: 1rem;
+    }
+
+    .skills-content .content span {
+        width: 5rem;
+        height: 4rem;
+    }
+
+    .services-box .services-content {
+        padding: 0.5rem 0.3rem;
+    }
+
+    .services-content h3 {
+        font-size: 1rem;
+    }
+
+    .services-content p {
+        font-size: 0.9rem;
+    }
+}
