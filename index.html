@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"> <!-- Определение кодировки документа -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Установка viewport для адаптивности -->
+    <title>3D Portfolio Website</title> <!-- Заголовок страницы -->
+    <link rel="stylesheet" href="style.css"> <!-- Подключение CSS файла -->
     <!-- Box Icons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Подключение библиотеки иконок -->
 </head>
 <body>
-<div class="wrapper">
-    <div class="cover cover-left"></div>
-    <div class="cover cover-right"></div>
+<div class="wrapper"> <!-- Основной контейнер -->
+    <div class="cover cover-left"></div> <!-- Левая обложка -->
+    <div class="cover cover-right"></div> <!-- Правая обложка -->
 
-    <div class="book">
-        <!-- Profile Page -->
+    <div class="book"> <!-- Книга -->
+        <!-- Страница профиля -->
         <div class="book-page page-left">
             <div class="profile-page">
                 <img src="./images/try_ir-removebg.png" alt="Profile Image of Martins Groza">
-                <h1>Martins Groza</h1>
-                <h3>Java Fullstack Software Entwickler</h3>
+                <!-- Изображение профиля -->
+                <h1>Martins Groza</h1> <!-- Имя -->
+                <h3>Java Fullstack Software Entwickler</h3> <!-- Должность -->
 
-                <div class="social-media">
+                <div class="social-media"> <!-- Социальные сети -->
                     <a href="https://t.me/Mar4inja19"><i class='bx bxl-telegram'></i></a>
                     <a href="https://www.facebook.com/martins.groza.3"><i class='bx bxl-facebook'></i></a>
                     <a href="https://www.linkedin.com/in/martins-groza-936454263/"><i class='bx bxl-linkedin'></i></a>
                     <a href="https://www.instagram.com/groza.martins/"><i class='bx bxl-instagram'></i></a>
                 </div>
-                <h2>Personlishe Daten</h2>
-                <p>Geburtsdatum: 04.12.1988</p>
-                <p>Geburtsort: Lettland</p>
-                <p>Staatsangehörigkeit: Lettisch</p>
-                <p>Familienstand: Verheiratet, 1 Kind </p>
-                <h2>Kontakt</h2>
-                <p>Weidenbohrerweg 27, 44269 Dortmund</p>
-                <p>Mar4inja19@gmail.com</p>
-                <p> 015773657069</p>
+                <h2>Personlishe Daten</h2> <!-- Личные данные -->
+                <p>Geburtsdatum: 04.12.1988</p> <!-- Дата рождения -->
+                <p>Geburtsort: Lettland</p> <!-- Место рождения -->
+                <p>Staatsangehörigkeit: Lettisch</p> <!-- Гражданство -->
+                <p>Familienstand: Verheiratet, 1 Kind </p> <!-- Семейное положение -->
+                <h2>Kontakt</h2> <!-- Контакт -->
+                <p>Weidenbohrerweg 27, 44269 Dortmund</p> <!-- Адрес -->
+                <p>Mar4inja19@gmail.com</p> <!-- Email -->
+                <p>015773657069</p> <!-- Телефон -->
 
-                <div class="btn-box">
+                <div class="btn-box"> <!-- Кнопки -->
                     <a href="https://drive.google.com/drive/folders/1BpgwK9UdFupWNzU2UXLkBTuoCFc1QqQq?usp=drive_link"
-                       class="btn">Lebenslauf</a>
+                       class="btn">Lebenslauf</a> <!-- Кнопка для скачивания резюме -->
                     <a href="mailto:mar4inja19@gmail.com" class="btn contact-me">Kontaktiere Mich</a>
+                    <!-- Кнопка для контакта -->
                 </div>
             </div>
         </div>
-        <!-- Page 1 & 2 -->
+        <!-- Страницы 1 и 2 -->
         <div class="book-page page-right turn" id="turn-1">
-            <!-- Page 1 (Work Experience) -->
+            <!-- Страница 1 (Рабочий опыт) -->
             <div class="page-front">
-                <h1 class="title">Arbeitserfahrung</h1>
+                <h1 class="title">Arbeitserfahrung</h1> <!-- Заголовок страницы -->
                 <div class="workeduc-box">
                     <div class="workeduc-content">
-                        <span class="year"><i class='bx bxs-calendar'></i>05/2018-03/2023</span>
-                        <h3>VanEupen Logistik (DE)</h3>
-                        <p> • Kommissionier<br>
+                        <span class="year"><i class='bx bxs-calendar'></i>05/2018-03/2023</span> <!-- Период работы -->
+                        <h3>VanEupen Logistik (DE)</h3> <!-- Место работы -->
+                        <p> • Kommissionier<br> <!-- Должностные обязанности -->
                             • Verpacker<br>
                             • MX Fahrer, Staplerfahrer, Schubmasterfahrer<br>
                             • Qualität Kontrolle<br>
@@ -93,21 +96,22 @@
                         <hr class="separator">
                     </div>
                 </div>
-                <span class="number-page">1</span>
-                <!-- Next Button -->
+                <span class="number-page">1</span> <!-- Номер страницы -->
+                <!-- Кнопка далее -->
                 <span class="nextprev-btn" data-page="turn-1">
                     <i class='bx bx-chevron-right'></i>
                 </span>
             </div>
 
-            <!-- Page 2 (Education) -->
+            <!-- Страница 2 (Образование) -->
             <div class="page-back">
-                <h1 class="title">Ausbildung</h1>
+                <h1 class="title">Ausbildung</h1> <!-- Заголовок страницы -->
                 <div class="workeduc-box">
                     <div class="workeduc-content">
                         <span class="year"><i class='bx bxs-calendar'></i>09/2023 - 05/2024</span>
-                        <h3>AIT-TR GMBH (Berlin)</h3>
-                        <p> • Basic programming (Java)<br>
+                        <!-- Период обучения -->
+                        <h3>AIT-TR GMBH (Berlin)</h3> <!-- Место обучения -->
+                        <p> • Basic programming (Java)<br> <!-- Курсы -->
                             • Java advanced and Object Oriented Programming (OOP)<br>
                             • Basic algorithms and data structures<br>
                             • Front End Development basics<br>
@@ -126,75 +130,75 @@
                     </div>
                     <div class="workeduc-content">
                         <span class="year"><i class='bx bxs-calendar'></i>05/2021 - 10/2021</span>
-                        <h3>Online Universität ‘Kaino‘</h3>
-                        <p> • 3D- Modellierer mit Blender3D (middle)
+                        <!-- Период обучения -->
+                        <h3>Online Universität ‘Kaino‘</h3> <!-- Место обучения -->
+                        <p> • 3D- Modellierer mit Blender3D (middle) <!-- Курсы -->
                         </p>
                         <!-- Добавленная горизонтальная линия -->
                         <hr class="separator">
                     </div>
                     <div class="workeduc-content">
                         <span class="year"><i class='bx bxs-calendar'></i>09/1995 - 07/2006</span>
-                        <h3>Grundbildung (Varaklani Sekundarschule)</h3>
-                        <p> • Grundausbildung
+                        <!-- Период обучения -->
+                        <h3>Grundbildung (Varaklani Sekundarschule)</h3> <!-- Место обучения -->
+                        <p> • Grundausbildung <!-- Курсы -->
                         </p>
                         <!-- Добавленная горизонтальная линия -->
                         <hr class="separator">
                     </div>
                 </div>
-                <span class="number-page">2</span>
-                <!-- Prev Button -->
+                <span class="number-page">2</span> <!-- Номер страницы -->
+                <!-- Кнопка назад -->
                 <span class="nextprev-btn back" data-page="turn-1">
                     <i class='bx bx-chevron-left'></i>
                 </span>
             </div>
         </div>
 
-        <!-- Page 3 & 4 -->
+        <!-- Страницы 3 и 4 -->
         <div class="book-page page-right turn" id="turn-2">
-            <!-- Page 3 (My Services) -->
+            <!-- Страница 3 (Услуги) -->
             <div class="page-front">
-                <h1 class="title">Kenntnisse</h1>
+                <h1 class="title">Kenntnisse</h1> <!-- Заголовок страницы -->
                 <div class="services-box">
                     <div class="services-content">
                         <i class='bx bxs-chat'></i>
-                        <h3>Sprachen</h3>
-                        <p>Lettisch – Muttersprache</p>
+                        <h3>Sprachen</h3> <!-- Заголовок -->
+                        <p>Lettisch – Muttersprache</p> <!-- Языки -->
                         <p>Russisch – Wie eine Muttersprache</p>
-                        <p>Englisch – B2(Ohne Zertifikat)</p>
+                        <p>Englisch – B2 (Ohne Zertifikat)</p>
                         <p>Deutsch – B1+ (Ohne Zertifikat)</p>
-
-
                     </div>
                     <div class="services-content">
-                        <i class='bx bx-desktop' ></i>
-                        <h3>Software</h3>
-                        <p>•	Software
-                            •	Microsoft Word +/-
-                            •	Microsoft Excel +/-
-                            •	Microsoft PowerPoint +/-
-                            •	Intelij IDEA
-                            •	Visual Studio
-                            •	MYSQL workbench
-                            •	BeeKeeper
-                            •	Postgre pgAdmin
-                            •	Blender3D
-                            •	Postman
-                            •	MongoDbCompass
+                        <i class='bx bx-desktop'></i>
+                        <h3>Software</h3> <!-- Заголовок -->
+                        <p>• Software <!-- Программное обеспечение -->
+                            • Microsoft Word +/-
+                            • Microsoft Excel +/-
+                            • Microsoft PowerPoint +/-
+                            • IntelliJ IDEA
+                            • Visual Studio
+                            • MYSQL Workbench
+                            • BeeKeeper
+                            • PostgreSQL pgAdmin
+                            • Blender3D
+                            • Postman
+                            • MongoDB Compass
                         </p>
                     </div>
                 </div>
-                <span class="number-page">3</span>
-                <!-- Next Button -->
+                <span class="number-page">3</span> <!-- Номер страницы -->
+                <!-- Кнопка далее -->
                 <span class="nextprev-btn" data-page="turn-2">
                     <i class="bx bx-chevron-right"></i>
                 </span>
             </div>
-            <!-- Page 4 (My Skills) -->
+            <!-- Страница 4 (Навыки) -->
             <div class="page-back">
-                <h1 class="title">Meine Fähigkeiten</h1>
+                <h1 class="title">Meine Fähigkeiten</h1> <!-- Заголовок страницы -->
                 <div class="skills-box">
                     <div class="skills-content">
-                        <h3>Front-End</h3>
+                        <h3>Front-End</h3> <!-- Навыки фронтенда -->
                         <div class="content">
                             <span><i class='bx bxl-html5'></i>HTML</span>
                             <span><i class='bx bxl-css3'></i>CSS</span>
@@ -205,72 +209,95 @@
                         </div>
                     </div>
                     <div class="skills-content">
-                        <h3>Back-End</h3>
+                        <h3>Back-End</h3> <!-- Навыки бекенда -->
                         <div class="content">
                             <span><i class='bx bxl-java'></i>Java</span>
                             <span><i class='bx bxl-spring-boot'></i>SpringBoot</span>
-
                         </div>
                     </div>
                     <div class="skills-content">
-                        <h3>UI/UX Design</h3>
+                        <h3>UI/UX Design</h3> <!-- Навыки дизайна -->
                         <div class="content">
                             <span><i class='bx bxl-blender'></i>Blender3D</span>
                         </div>
                     </div>
                 </div>
-                <span class="number-page">4</span>
-                <!-- Prev Button -->
+                <span class="number-page">4</span> <!-- Номер страницы -->
+                <!-- Кнопка назад -->
                 <span class="nextprev-btn back" data-page="turn-2">
                     <i class='bx bx-chevron-left'></i>
                 </span>
             </div>
         </div>
 
-        <!-- Page 5 & 6 -->
+        <!-- Страницы 5 и 6 -->
         <div class="book-page page-right turn" id="turn-3">
-            <!-- Page 5 (Latest Projects) -->
+            <!-- Страница 5 (Последний проект) -->
             <div class="page-front">
-                <h1 class="title">Neustes Projekt</h1>
+                <h1 class="title">Neustes Projekt</h1> <!-- Заголовок страницы -->
                 <div class="portfolio-box">
                     <div class="img-box">
-                        <img src="./images/kid.jpg" alt="Kidventuraky">
+                        <img src="./images/kid1.jpg" alt="Kidventuraky"> <!-- Изображение проекта -->
                     </div>
                     <div class="info-box">
                         <div class="info-title">
-                            <h3>Kidv3nturaky</h3>
-                            <a href="#">More Photos<i class='bx bx-link-external'></i></a>
+                            <h3>Kidv3nturaky</h3> <!-- Название проекта -->
+                            <a href="https://drive.google.com/file/d/1MjXjdqGBefn4yHykeoK17oZYd1_jg6ri/view?usp=drive_link">Video<i
+                                    class='bx bx-link-external'></i></a> <!-- Ссылка на фотографии -->
                         </div>
                     </div>
-                    <div class="btn-box">
-                        <a href="https://docs.google.com/document/d/1t32BuzVXFbJR8slTtcvvESFqhvJkcX1U/edit?usp=drive_link&ouid=110817681642987396360&rtpof=true&sd=true" class="btn">Über Front-end</a>
-                        <a href="https://docs.google.com/document/d/1QqijdM3FYsBpdsfBkSNLIQ0E43LIm0MA/edit?usp=drive_link&ouid=110817681642987396360&rtpof=true&sd=true" class="btn">Über Back-end</a>
+                    <div class="btn-box"> <!-- Кнопки -->
+                        <a href="https://docs.google.com/document/d/1t32BuzVXFbJR8slTtcvvESFqhvJkcX1U/edit?usp=drive_link&ouid=110817681642987396360&rtpof=true&sd=true"
+                           class="btn">Über Front-end</a>
+                        <a href="https://docs.google.com/document/d/1QqijdM3FYsBpdsfBkSNLIQ0E43LIm0MA/edit?usp=drive_link&ouid=110817681642987396360&rtpof=true&sd=true"
+                           class="btn">Über Back-end</a>
                     </div>
                 </div>
-                <span class="number-page">5</span>
-                <!-- Next Button -->
+                <span class="number-page">5</span> <!-- Номер страницы -->
+                <!-- Кнопка далее -->
                 <span class="nextprev-btn" data-page="turn-3">
-                    <i class="bx bx-chevron-right"></i>
+                    <i class='bx bx-chevron-right'></i>
                 </span>
             </div>
-            <!-- Page 6 (Contact Me) -->
+            <!-- Страница 6 (Контакт) -->
             <div class="page-back">
-                <h1 class="title">Kontaktiere mich!</h1>
                 <div class="contact-box">
-                    <form action="#">
-                        <input type="text" class="field" placeholder="Full Name" required>
-                        <input type="email" class="field" placeholder="Email Address" required>
-                        <textarea name="" id="" cols="30" rows="10" class="field" placeholder="Your Message"
-                                  required></textarea>
-                        <input type="submit" class="btn" value="Send Message">
-                    </form>
+                    <h4 style="font-family: Poppins, sans-serif">Dortmund, den 2. August 2024</h4>
+                    <h3> ingenit GmbH & Co. KG
+                        TechnologieZentrum Dortmund
+                        Emil-Figge-Straße 80
+                        44227 Dortmund</h3>
+                    <h3 style="color: #3d7187"> Betreff: Bewerbung als Junior Softwareentwickler (m/w/d)</h3>
+                    <p>
+                        Betreff: Bewerbung als Junior Softwareentwickler (m/w/d)
+                        Sehr geehrte Frau Unrath,
+                        mit Interesse habe ich Ihre Stellenausschreibung auf Ihrer Website gelesen und bewerbe mich
+                        hiermit als Junior Softwareentwickler (m/w/d) für anspruchsvolle Webapplikationen bei der
+                        ingenit GmbH & Co. KG.
+                        Mein Name ist Martins Groza und ich habe vor kurzem meine Ausbildung im Bereich
+                        Softwareentwicklung bei der AIT-TR GMBH in Berlin abgeschlossen.
+                        Während meiner Ausbildung und meiner bisherigen beruflichen Laufbahn habe ich gelernt,
+                        eigenverantwortlich und strukturiert zu arbeiten. Ich arbeite gerne im Team und habe Freude an
+                        projektbezogener Arbeit.
+                        In den letzten drei Monaten habe ich mich intensiv darauf konzentriert, Code zu schreiben und
+                        meine eigene Anwendung zu entwickeln. Diese Erfahrung hat meine praktischen Fähigkeiten weiter
+                        gestärkt und mein Verständnis für Softwareentwicklung vertieft.
+                        Ich schätze die Möglichkeit, in einem kreativen und dynamischen Umfeld zu arbeiten und mich
+                        kontinuierlich weiterzuentwickeln. Die von Ihnen gebotenen Weiterbildungsmöglichkeiten und die
+                        flexible, familienfreundliche Gestaltung der Arbeitszeiten sprechen mich besonders an.
+                        Anbei finden Sie meine Bewerbungsunterlagen im PDF-Format. Über die Möglichkeit, mich in einem
+                        persönlichen Gespräch vorzustellen und mehr über die spannenden Projekte und Aufgaben bei der
+                        ingenit GmbH & Co. KG zu erfahren, würde ich mich sehr freuen.
+                        Mit freundlichen Grüßen,
+                        Martins Groza
+                    </p>
                 </div>
-                <span class="number-page">6</span>
-                <!-- Prev Button -->
+                <span class="number-page">6</span> <!-- Номер страницы -->
+                <!-- Кнопка назад -->
                 <span class="nextprev-btn back" data-page="turn-3">
-                    <i class="bx bx-chevron-left"></i>
+                    <i class='bx bx-chevron-left'></i>
                 </span>
-                <a href="#" class="back-profile">
+                <a href="#" class="back-profile"> <!-- Ссылка на профиль -->
                     <p>Profile</p>
                     <i class='bx bxs-user'></i>
                 </a>
@@ -278,6 +305,6 @@
         </div>
     </div>
 </div>
-<script src="script.js"></script>
+<script src="script.js"></script> <!-- Подключение скрипта -->
 </body>
 </html>
