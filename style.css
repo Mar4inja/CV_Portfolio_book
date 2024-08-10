@@ -109,15 +109,16 @@ body {
 }
 
 .profile-page img {
-    width: 180px; /* Фиксированная ширина изображения */
-    height: 180px; /* Фиксированная высота изображения */
-    border-radius: 50%; /* Закругление границ до формы круга */
-    border: 0.25rem solid var(--main-color); /* Цвет и толщина рамки */
-    margin-bottom: 0.8rem; /* Нижний отступ */
-    object-fit: cover; /* Обрезка изображения, чтобы заполнить контейнер */
-    object-position: center; /* Центрирование изображения */
-    transform: scaleX(-1); /* Убираем отражение изображения по горизонтали */
+    width: 180px; /* Fiksēta attēla platums */
+    height: 180px; /* Fiksēta attēla augstums */
+    border-radius: 50%; /* Noapaļotas malas, lai izveidotu apli */
+    border: 0.25rem solid var(--main-color); /* Rāmja krāsa un biezums */
+    margin-bottom: 0.8rem; /* Apakšējais attālums no tekstiem vai citiem elementiem */
+    object-fit: cover; /* Attēls aizpildīs visu konteineru */
+    object-position: center 20%; /* Attēla pozīcija konteinerā (centrs un apakšā) */
+    transform: scaleX(1); /* Horizontāla atspoguļošana, ja nepieciešams */
 }
+
 
 
 
